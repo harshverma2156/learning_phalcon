@@ -58,4 +58,14 @@ class UsersController extends Controller
 
     echo "Update Failed";
     }
+
+    public function deleteAction($di)
+    {
+        $user = Users::findFirst($di);
+        if ($user) {
+            $user->delete();
+        }
+
+        header('Location: /learning_phalcon/public/users');
+    }
 }
