@@ -6,7 +6,7 @@ class IndexController extends Controller
 {
     public function indexAction()
     {
-        $this->view->disable();
+        // $this->view->disable();
 
         echo "First Controller is working!";
     }
