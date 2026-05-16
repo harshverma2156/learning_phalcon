@@ -11,7 +11,7 @@ class LoaderService
         $loader->setDirectories(
             [
                 '../app/Controllers/',
-                '../app/Models'
+                '../app/Models/'
             
             ]
         );

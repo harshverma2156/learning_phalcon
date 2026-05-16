@@ -1,0 +1,28 @@
+<h1>Edit User</h1>
+
+<form method="POST"
+      action="/learning_phalcon/public/users/update">
+
+    <input type="hidden"
+           name="id"
+           value="<?= $user->id ?>">
+
+    <p>
+        Name:
+        <input type="text"
+               name="name"
+               value="<?= $user->name ?>">
+    </p>
+
+    <p>
+        Email:
+        <input type="email"
+               name="email"
+               value="<?= $user->email ?>">
+    </p>
+
+    <button type="submit">
+        Update User
+    </button>
+
+</form>

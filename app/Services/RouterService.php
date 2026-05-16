@@ -8,17 +8,12 @@ class RouterService
     {
         $di->setShared('router', function () {
 
-            $router = new Router(false);
+            // $router = new Router(false);
 
-            $router->add(
-                '/',
-                [
-                    'controller' => 'index',
-                    'action'     => 'index'
-                ]
-            );
+            return new Router();
+           
 
-            return $router;
+            // return $router;
 
         });
     }
