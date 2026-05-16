@@ -8,8 +8,8 @@
         $di->setShared('view', function () use ($config) {
             $view = new View();
 
-            $view->setViewDir(
-                $config['application']['viewDir']
+            $view->setViewsDir(
+                $config['application']['viewsDir']
             );
             return $view;
         });
