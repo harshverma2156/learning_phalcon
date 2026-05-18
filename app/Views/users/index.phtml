@@ -1,3 +1,11 @@
+<link rel="stylesheet"
+href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+
+
 <h1>Users List</h1>
 
 <a href="/learning_phalcon/public/users/create">
@@ -6,46 +14,62 @@
 
 <br><br>
 
-<table border="1" cellpadding="10">
+<table id="usersTable" border="1" cellpadding="10">
 
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Action</th>
-    </tr>
-
-    <?php foreach ($users as $user) { ?>
+    <thead>
 
         <tr>
-
-            <td><?= $user->id ?></td>
-
-            <td><?= $user->name ?></td>
-
-            <td><?= $user->email ?></td>
-
-            <td>
-
-                <a href="/learning_phalcon/public/users/edit/<?= $user->id ?>">
-                    Edit
-                </a>
-
-                |
-
-                <a href="/learning_phalcon/public/users/delete/<?= $user->id ?>"
-                   onclick="return confirm('Are you sure?')">
-
-                    Delete
-                </a>
-
-            </td>
-
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Action</th>
         </tr>
 
-    <?php } ?>
+    </thead>
 
-    <br>
-    <h1>You Can see "Users"...</h1>
+    <tbody>
+
+        <?php foreach ($users as $user) { ?>
+
+            <tr>
+
+                <td><?= $user->id ?></td>
+
+                <td><?= $user->name ?></td>
+
+                <td><?= $user->email ?></td>
+
+                <td>
+
+                    <a href="/learning_phalcon/public/users/edit/<?= $user->id ?>">
+                        Edit
+                    </a>
+
+                    |
+
+                    <a href="/learning_phalcon/public/users/delete/<?= $user->id ?>"
+                       onclick="return confirm('Are you sure?')">
+
+                        Delete
+                    </a>
+
+                </td>
+
+            </tr>
+
+        <?php } ?>
+
+    </tbody>
 
 </table>
+
+
+<script>
+
+$(document).ready(function () {
+
+    $('#usersTable').DataTable();
+
+});
+
+</script>
