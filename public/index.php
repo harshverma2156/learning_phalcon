@@ -13,38 +13,19 @@ require '../app/Services/ViewService.php';
 require '../app/Services/RouterService.php';
 require '../app/Services/UrlService.php';
 
-/*
-|--------------------------------------------------------------------------
-| Register Autoloader
-|--------------------------------------------------------------------------
-*/
 
 LoaderService::register($config);
 
-/*
-|--------------------------------------------------------------------------
-| Create Dependency Injection Container
-|--------------------------------------------------------------------------
-*/
 
 $di = new FactoryDefault();
 
-/*
-|--------------------------------------------------------------------------
-| Register Services
-|--------------------------------------------------------------------------
-*/
 
 DatabaseService::register($di, $config);
 ViewService::register($di, $config);
 RouterService::register($di);
 UrlService::register($di, $config);
 
-/*
-|--------------------------------------------------------------------------
-| Handle Request
-|--------------------------------------------------------------------------
-*/
+
 
 try {
 
