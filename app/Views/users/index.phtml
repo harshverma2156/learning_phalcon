@@ -37,6 +37,11 @@ href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
             <th>ID</th>
             <th>Name</th>
             <th>Email</th>
+            <th>NUMBER</th>
+            <th>CITY</th>
+            <th>STATE</th>
+            <th>COUNTRY</th>
+            <th>PINCODE</th>
             <th>Action</th>
         </tr>
 
@@ -53,6 +58,12 @@ href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
                 <td><?= $user->name ?></td>
 
                 <td><?= $user->email ?></td>
+
+                <td><?= $user->number ?></td>
+                <td><?= $user->city ?></td>
+                <td><?= $user->state ?></td>
+                <td><?= $user->country ?></td>
+                <td><?= $user->pincode ?></td>
 
                 <td>
 
@@ -85,6 +96,14 @@ $(document).ready(function () {
 
    $('#usersTable').DataTable({
 
+    stateSave: true,
+
+    // scrollX: true,
+
+    // fixedColumns: {
+    //     leftColumns: 2
+    // },
+
     dom: 'Bfrtip',
 
     buttons: [
@@ -97,7 +116,7 @@ $(document).ready(function () {
 
     columnDefs: [
         {
-            targets: 3,
+            targets: 7,
             orderable: false
         }
     ]

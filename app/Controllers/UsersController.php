@@ -28,7 +28,7 @@ class UsersController extends Controller
         $user->city = $this->request->getPost('city');
         $user->state = $this->request->getPost('state');
         $user->country = $this->request->getPost('country');
-        $user->pincode = $this->request->getPost('pindoce');
+        $user->pincode = $this->request->getPost('pincode');
 
         if ($user->save()) {
 
