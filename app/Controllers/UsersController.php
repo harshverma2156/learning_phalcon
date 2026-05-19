@@ -20,6 +20,36 @@ class UsersController extends Controller
 
     public function storeAction()
     {
+        $name = trim($this->request->getPost('name'));
+        $email = trim($this->request->getPost('email'));
+        $number = trim($this->request->getPost('number'));
+        $city = trim($this->request->getPost('city'));
+        $state = trim($this->request->getPost('state'));
+        $country = trim($this->request->getPost('country'));
+        $pincode = trim($this->request->getpost('pincode'));
+        
+        if(
+            empty($name) ||
+            empty($email) ||
+            empty($number) ||
+            empty($city) ||
+            empty($state) ||
+            empty($country) ||
+            empty($pincode)
+        ) {
+            echo "All fields are required...";
+
+            exit;
+        }
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            echo "Invalid email format";
+
+            exit;
+        }
+
+
+
         $user = new Users();
 
         $user->name = $this->request->getPost('name');
