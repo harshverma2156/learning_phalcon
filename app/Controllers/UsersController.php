@@ -24,7 +24,12 @@ class UsersController extends Controller
 
         $user->name = $this->request->getPost('name');
         $user->email = $this->request->getPost('email');
-
+        $user->number = $this->request->getPost('number');
+        $user->city = $this->request->getPost('city');
+        $user->state = $this->request->getPost('state');
+        $user->country = $this->request->getPost('country');
+        $user->pincode = $this->request->getPost('pindoce');
+        
         if ($user->save()) {
 
             header('Location: /learning_phalcon/public/users');
